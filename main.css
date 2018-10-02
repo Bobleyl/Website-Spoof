@@ -1,0 +1,27 @@
+.text-center{
+    text-align: center;
+}
+
+.whiteBack{
+    background-color: white;
+}
+
+.hidden{
+    display: none;
+}
+
+.wide{
+    width: 120px;
+}
+
+#textSection {
+    padding: 100px;
+    text-align: center;
+    width: 100%;
+}
+
+#headerBar {
+    padding: 100px;
+    text-align: center;
+    width: 100%;
+}

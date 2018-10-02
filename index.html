@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="main.css">
+
+        <link rel="stylesheet" href="http://www.cornify.com">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <title>Home</title>
+
+        <script>
+            var iframe;
+            function visitSite(){
+                var url = document.getElementById("siteURL").value;
+                iframe = document.getElementById("lookupWindow");
+                iframe.src = "https://"+url;
+
+                if(iframe.classList.contains("hidden")){
+                    iframe.classList.remove("hidden");
+                    visitBtn.style.display = "none";
+                    urlBar.style.display = "none";
+                    headerBar.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <body class="whiteBack">
+        <div class="container-fluid">
+            <div class="row">
+                <div onclick="cornify_add()" class="col-sm-12" align="center">
+                    <iframe src="" class="hidden" width="100%" height="900" id="lookupWindow"></iframe>
+                </div>
+                <br>
+                    <h2 id="headerBar">Copy url of site that your co-worker was just looking at below.</h2>
+                <br><br><br>
+                <div id="urlBar" class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">https://</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="siteURL">
+                </div>
+                <div id= "visitBtn" class="col-sm-12" align="center">
+                    <button class="btn btn-default wide" onclick="visitSite()">Visit</button>
+                </div>
+
+                <br><br>
+                <div id= "textSection">
+                    <p id="id1">When you're co-worker or friend gets up for a break, </p>
+                    <p id="id2">simply copy and paste everything after the http:// on their url page and paste it above!</p>
+                    <p id="id3">Sit back and relax as they get confused beyond belief!</p>
+                </div>
+
+                <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+            </div>
+        </div>
+
+        <script>
+        var myConfObj = {
+            iframeMouseOver : false
+        }
+
+        document.getElementById('lookupWindow').addEventListener('mouseover',function(){
+            cornify_add();
+            myConfObj.iframeMouseOver = true;
+        });
+        document.getElementById('lookupWindow').addEventListener('mouseout',function(){
+             myConfObj.iframeMouseOver = false;
+        });
+        </script>
+    </body>
+</html>
